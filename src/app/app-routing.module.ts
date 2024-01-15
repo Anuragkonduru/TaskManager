@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TasklistComponent } from './Components/tasklist/tasklist.component';
 import { TaskformComponent } from './Components/taskform/taskform.component';
+import { TasklistComponent } from './Components/tasklist/tasklist.component';
 
 const routes: Routes = [
-  { path: '', component: TasklistComponent },
+   { path: '', redirectTo: '/taskform', pathMatch: 'full'},
   { path: 'taskform', component: TaskformComponent },
   { path: 'tasklist', component: TasklistComponent },
   {
@@ -15,6 +15,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

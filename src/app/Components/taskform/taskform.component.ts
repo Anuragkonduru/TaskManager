@@ -20,11 +20,14 @@ export class TaskformComponent implements OnInit {
       taskName: ['', Validators.required],
       description: [''],
       dueDate: ['', Validators.required],
+      priority: ['Low', Validators.required],
+      status: ['Todo', Validators.required],
     });
   }
   onSubmit() {
     if (this.taskForm.valid) {
       // this.toggleForm = false;
+      console.log(this.taskForm.value);
       this.taskService.addTask(this.taskForm.value);
       console.log(this.taskService);
       this.taskService.getTasks().subscribe((tasks) => {

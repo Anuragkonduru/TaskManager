@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Task } from '../Interfaces/Task';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -114,7 +113,9 @@ export class TaskService {
       priority: 'Medium',
     },
   ];
+  private EditIndex: number = 0;
   private tasksSubject = new BehaviorSubject<any[]>([]);
+  private taskSubject = new BehaviorSubject<any>('');
   constructor() {
     this.tasksSubject.next([...this.tasks]);
   }
@@ -141,5 +142,15 @@ export class TaskService {
   deleteTask(index: number) {
     this.tasks.splice(index, 1);
     this.tasksSubject.next([...this.tasks]);
+  }
+  getTaskByid(index: number) {
+    const task = this.tasks[index];
+    return task;
+  }
+  setEditIndex(index: number) {
+    this.EditIndex = index;
+  }
+  getEditIndex() {
+    return this.EditIndex;
   }
 }

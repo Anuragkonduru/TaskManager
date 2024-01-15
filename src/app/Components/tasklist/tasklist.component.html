@@ -1,26 +1,11 @@
 <div class="max-w-7xl px-4 mx-auto sm:px-8">
   <div class="py-8">
     <div class="flex flex-row justify-between w-full mb-1 sm:mb-0">
-      <h2 class="text-2xl leading-tight">Users</h2>
+      <h2 class="text-2xl leading-tight font-bold text-white">Tasks List</h2>
       <div class="text-end">
         <form
           class="flex flex-col justify-center w-3/4 max-w-sm space-y-3 md:flex-row md:w-full md:space-x-3 md:space-y-0"
-        >
-          <div class="relative">
-            <input
-              type="text"
-              id='"form-subscribe-Filter'
-              class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-              placeholder="name"
-            />
-          </div>
-          <button
-            class="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-purple-600 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
-            type="submit"
-          >
-            Filter
-          </button>
-        </form>
+        ></form>
       </div>
     </div>
     <div class="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
@@ -30,150 +15,194 @@
             <tr>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200"
+                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               >
                 Task
               </th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200"
+                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               >
                 Description
               </th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200"
+                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               >
                 Due Date
               </th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200"
+                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               >
                 status
               </th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200"
+                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               >
                 Priority
               </th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200"
+                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
+              ></th>
+              <th
+                scope="col"
+                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               ></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody
+            class="text-white/90 overflow-y-auto overflow-scroll max-h-screen"
+          >
             <tr *ngFor="let task of tasks; let i = index">
-              <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
+              <td
+                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+              >
                 <div class="flex items-center">
                   <div class="ml-3">
-                    <p class="text-gray-900 whitespace-no-wrap">
+                    <p class="text-white/90 whitespace-no-wrap">
                       {{ task.taskName }}
                     </p>
                   </div>
                 </div>
               </td>
-              <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                <p class="text-gray-900 whitespace-no-wrap">
+              <td
+                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+              >
+                <p class="text-white/90 whitespace-no-wrap">
                   {{ task.description }}
                 </p>
               </td>
-              <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                <p class="text-gray-900 whitespace-no-wrap">
+              <td
+                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+              >
+                <p class="text-white/90 whitespace-no-wrap">
                   {{ task.dueDate | date : "dd/MM/yyyy" }}
                 </p>
               </td>
-              <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
+              <td
+                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+              >
                 <span
-                  class="relative inline-block px-3 py-1 font-semibold leading-tight text-green-900"
+                  class="relative inline-block px-3 py-1 font-semibold leading-tight text-green-200"
                 >
                   <span
                     aria-hidden="true"
-                    class="absolute inset-0 bg-green-200 rounded-full opacity-50"
+                    class="absolute inset-0 text-green-900 rounded-full opacity-50"
                   >
                   </span>
                   <span class="relative"> {{ task.status }} </span>
                 </span>
               </td>
-              <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                <p class="text-gray-900 whitespace-no-wrap">
+              <td
+                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+              >
+                <p class="text-white/90 whitespace-no-wrap">
                   {{ task.priority }}
                 </p>
               </td>
-              <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                <a href="#" class="text-indigo-600 hover:text-indigo-900">
-                  Edit
-                </a>
+              <td
+                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+              >
+                <button type="button" (click)="openedit(task, i)">
+                  <svg
+                   height="25px"
+                    width="25px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M21.2799 6.40005L11.7399 15.94C10.7899 16.89 7.96987 17.33 7.33987 16.7C6.70987 16.07 7.13987 13.25 8.08987 12.3L17.6399 2.75002C17.8754 2.49308 18.1605 2.28654 18.4781 2.14284C18.7956 1.99914 19.139 1.92124 19.4875 1.9139C19.8359 1.90657 20.1823 1.96991 20.5056 2.10012C20.8289 2.23033 21.1225 2.42473 21.3686 2.67153C21.6147 2.91833 21.8083 3.21243 21.9376 3.53609C22.0669 3.85976 22.1294 4.20626 22.1211 4.55471C22.1128 4.90316 22.0339 5.24635 21.8894 5.5635C21.7448 5.88065 21.5375 6.16524 21.2799 6.40005V6.40005Z"
+                        stroke="#1c71d8"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M11 4H6C4.93913 4 3.92178 4.42142 3.17163 5.17157C2.42149 5.92172 2 6.93913 2 8V18C2 19.0609 2.42149 20.0783 3.17163 20.8284C3.92178 21.5786 4.93913 22 6 22H17C19.21 22 20 20.2 20 18V13"
+                        stroke="#1c71d8"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </g>
+                  </svg>
+                </button>
+              </td>
+              <td
+                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+              >
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-primary"
+                  (click)="deleteTask(i)"
+                >
+                  <svg
+                    height="25px"
+                    width="25px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M10 11V17"
+                        stroke="#ff0000"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M14 11V17"
+                        stroke="#ff0000"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M4 7H20"
+                        stroke="#ff0000"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z"
+                        stroke="#ff0000"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                        stroke="#ff0000"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </g>
+                  </svg>
+                </button>
               </td>
             </tr>
           </tbody>
         </table>
-        <div
-          class="flex flex-col items-center px-5 py-5 bg-white xs:flex-row xs:justify-between"
-        >
-          <div class="flex items-center">
-            <button
-              type="button"
-              class="w-full p-4 text-base text-gray-600 bg-white border rounded-l-xl hover:bg-gray-100"
-            >
-              <svg
-                width="9"
-                fill="currentColor"
-                height="8"
-                class=""
-                viewBox="0 0 1792 1792"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1427 301l-531 531 531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19l-742-742q-19-19-19-45t19-45l742-742q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"
-                ></path>
-              </svg>
-            </button>
-            <button
-              type="button"
-              class="w-full px-4 py-2 text-base text-indigo-500 bg-white border-t border-b hover:bg-gray-100"
-            >
-              1
-            </button>
-            <button
-              type="button"
-              class="w-full px-4 py-2 text-base text-gray-600 bg-white border hover:bg-gray-100"
-            >
-              2
-            </button>
-            <button
-              type="button"
-              class="w-full px-4 py-2 text-base text-gray-600 bg-white border-t border-b hover:bg-gray-100"
-            >
-              3
-            </button>
-            <button
-              type="button"
-              class="w-full px-4 py-2 text-base text-gray-600 bg-white border hover:bg-gray-100"
-            >
-              4
-            </button>
-            <button
-              type="button"
-              class="w-full p-4 text-base text-gray-600 bg-white border-t border-b border-r rounded-r-xl hover:bg-gray-100"
-            >
-              <svg
-                width="9"
-                fill="currentColor"
-                height="8"
-                class=""
-                viewBox="0 0 1792 1792"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   </div>

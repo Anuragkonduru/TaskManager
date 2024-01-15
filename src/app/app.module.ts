@@ -11,6 +11,7 @@ import {
   ReactiveFormsModule,
 
 } from '@angular/forms';
+import { EditTaskComponent } from './Components/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {
     TaskformComponent,
     TasklistComponent,
     NavbarComponent,
+    EditTaskComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

@@ -1,41 +1,100 @@
-<div class="max-w-7xl px-4 mx-auto sm:px-8">
-  <div class="py-8">
-<form
+<div class="max-w-7xl min-h-7xl px-4 mx-auto sm:px-8">
+  <p class="text-2xl font-bold pt-4 text-white">Add A New Task</p>
+  <div class="pt-8">
+    <form
       [formGroup]="taskForm"
       *ngIf="toggleForm || tasks.length == 0"
       (ngSubmit)="onSubmit()"
     >
-      <div class="formLabel">
-        <div class="formInput">
-          <label class="primary-text" for="taskName">Task Name</label>
+      <div class="flex flex-col gap-6 justify-center">
+        <div class="flex gap-10">
+          <label class="text-xl font-semibold text-white/90" for="taskName"
+            >Task Name</label
+          >
           <input
-            class="inp"
+            class="bg-zinc-800 text-white/90 rounded-md border border-gray-800 focus:outline-none shadow-sm"
             type="text"
             id="taskName"
             formControlName="taskName"
           />
         </div>
-        <div class="formInput">
-          <label class="primary-text" for="description">Description</label>
+        <div class="flex gap-4">
+          <label class="text-xl text-white/90 font-semibold" for="description"
+            >Description</label
+          >
           <textarea
-            class="inp"
+            class="bg-zinc-800 text-white/90 rounded-md border border-gray-800 focus:outline-none shadow-sm"
             id="description"
             formControlName="description"
           ></textarea>
         </div>
-        <div class="formInput">
-          <label class="primary-text" for="dueDate">Due Date</label>
+        <div class="flex gap-12">
+          <label class="text-xl text-white/90 font-semibold" for="dueDate"
+            >Due Date</label
+          >
           <input
-            class="inp"
+            class="bg-zinc-800 text-white/90 rounded-md border border-gray-800 focus:outline-none shadow-sm w-52"
             type="date"
             id="dueDate"
             formControlName="dueDate"
           />
         </div>
+        <div class="flex gap-12">
+          <label class="text-xl text-white/90 font-semibold" for="priority"
+            >Priority</label
+          >
+          <div class="text-white/90">
+            <input
+              class="size-4"
+              type="radio"
+              id="priorityLow"
+              formControlName="priority"
+              name="priority"
+              value="Low"
+            />
+            Low
+            <input
+              class="size-4"
+              type="radio"
+              id="priorityMedium"
+              formControlName="priority"
+              name="priority"
+              value="Medium"
+            />
+            Medium
+            <input
+              class="size-4"
+              type="radio"
+              id="priorityHigh"
+              formControlName="priority"
+              name="priority"
+              value="High"
+            />
+            High
+          </div>
+        </div>
+        <div class="flex gap-12">
+          <label class="text-xl pr-5 text-white/90 font-semibold" for="status"
+            >Status</label
+          >
+          <select
+            class="block px-3 py-2 rounded-md bg-zinc-800 text-white/90 border border-gray-800 focus:outline-none shadow-sm w-52"
+            name="status"
+            formControlName="status"
+          >
+            <option class="" value="Todo" selected>Todo</option>
+            <option class="" value="In Progress">In Progress</option>
+            <option class="" value="Done">Done</option>
+            <option class="" value="Backlog">Backlog</option>
+            <option class="" value="Canceled">Canceled</option>
+          </select>
+        </div>
       </div>
-      <div class="button-container">
-        <button class="primary-text" type="submit">
-
+      <div class="flex justify-center items-center p-6">
+        <button
+          class="border w-44 flex rounded-md justify-center hover:border-white hover:shadow-lg hover:scale-110 transition-transform border-slate-500 py-1"
+          type="submit"
+        >
           <svg
             height="40px"
             width="40px"
