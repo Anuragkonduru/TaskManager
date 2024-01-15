@@ -1,1 +1,33 @@
-<p>navbar works!</p>
+<ul
+  class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200"
+>
+  <li class="mr-2">
+    <a
+      [routerLink]="''"
+      class="inline-block p-4 text-gray-800 bg-white rounded-t-lg active"
+    >
+      Home
+    </a>
+  </li>
+  <li class="mr-2">
+    <a
+      [routerLink]="'taskform'"
+      class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50"
+    >
+      Form | Add New Task
+    </a>
+  </li>
+  <li class="mr-2">
+    <a
+      [routerLink]="'tasklist'"
+      class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50"
+    >
+      Task List
+    </a>
+  </li>
+  <!-- <li class="mr-2">
+        <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 ">
+            Live
+        </a>
+    </li> -->
+</ul>

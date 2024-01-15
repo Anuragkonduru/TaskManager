@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Task } from '../Interfaces/Task';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -114,7 +115,9 @@ export class TaskService {
     },
   ];
   private tasksSubject = new BehaviorSubject<any[]>([]);
-  constructor() {}
+  constructor() {
+    this.tasksSubject.next([...this.tasks]);
+  }
   getTasks() {
     return this.tasksSubject.asObservable();
   }

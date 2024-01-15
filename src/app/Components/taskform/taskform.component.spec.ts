@@ -6,12 +6,10 @@ describe('TaskformComponent', () => {
   let component: TaskformComponent;
   let fixture: ComponentFixture<TaskformComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [TaskformComponent]
-    })
-    .compileComponents();
-    
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [TaskformComponent]
+    });
     fixture = TestBed.createComponent(TaskformComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
