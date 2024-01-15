@@ -1,7 +1,5 @@
 # TaskManager
 
-# Task Manager
-
 ## clone the repository:
 
 ```sh
@@ -23,4 +21,4 @@ ng serve
 
 ## Live Demo
 
-[click here](https:)
+[click here](https://taskmanager-init.netlify.app/)
