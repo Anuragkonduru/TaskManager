@@ -15,41 +15,41 @@
             <tr>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               >
                 Task
               </th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               >
                 Description
               </th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               >
                 Due Date
               </th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               >
                 status
               </th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               >
                 Priority
               </th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               ></th>
               <th
                 scope="col"
-                class="px-5 py-3 text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm font-normal text-left text-white/90 uppercase bg-zinc-900 border-b border-gray-200"
               ></th>
             </tr>
           </thead>
@@ -58,7 +58,7 @@
           >
             <tr *ngFor="let task of tasks; let i = index">
               <td
-                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm bg-zinc-800 border-b border-gray-800"
               >
                 <div class="flex items-center">
                   <div class="ml-3">
@@ -69,21 +69,21 @@
                 </div>
               </td>
               <td
-                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm bg-zinc-800 border-b border-gray-800"
               >
                 <p class="text-white/90 whitespace-no-wrap">
                   {{ task.description }}
                 </p>
               </td>
               <td
-                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm bg-zinc-800 border-b border-gray-800"
               >
                 <p class="text-white/90 whitespace-no-wrap">
                   {{ task.dueDate | date : "dd/MM/yyyy" }}
                 </p>
               </td>
               <td
-                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm bg-zinc-800 border-b border-gray-800"
               >
                 <span
                   class="relative inline-block px-3 py-1 font-semibold leading-tight text-green-200"
@@ -97,18 +97,18 @@
                 </span>
               </td>
               <td
-                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm bg-zinc-800 border-b border-gray-800"
               >
                 <p class="text-white/90 whitespace-no-wrap">
                   {{ task.priority }}
                 </p>
               </td>
               <td
-                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm bg-zinc-800 border-b border-gray-800"
               >
                 <button type="button" (click)="openedit(task, i)">
                   <svg
-                   height="25px"
+                    height="25px"
                     width="25px"
                     viewBox="0 0 24 24"
                     fill="none"
@@ -140,7 +140,7 @@
                 </button>
               </td>
               <td
-                class="px-5 py-5 text-sm bg-zinc-800 border-b border-gray-800"
+                class="md:px-5 text-xs md:py-3 p-1 md:text-sm bg-zinc-800 border-b border-gray-800"
               >
                 <button
                   type="button"
