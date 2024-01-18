@@ -1,13 +1,13 @@
 <div
-class="bg-1  bg-blend-overlay min-h-screen min-w-screen flex flex-col justify-center items-center"
+  class="bg-1 bg-blend-overlay min-h-screen min-w-screen flex flex-col justify-center items-center"
 >
-<app-navbar></app-navbar>
-<div class="min-h-screen h-full w-full min-w-screen flex justify-center items-center">
-
-  <div class=" bg-white/30 backdrop-blur-3xl rounded-lg ">
-    <router-outlet></router-outlet>
+  <app-navbar></app-navbar>
+  <div
+    class="min-h-screen h-full w-full min-w-screen flex justify-center items-center"
+  >
+    <div class="bg-white/30 backdrop-blur-3xl rounded-lg">
+      <router-outlet></router-outlet>
+    </div>
   </div>
+  <ng-container #container></ng-container>
 </div>
-<ng-container #container></ng-container>
-</div>
- <!-- background-blend-mode:overlay,overlay,overlay,overlay,normal; -->
